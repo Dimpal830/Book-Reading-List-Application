@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book Reading List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <h1>Book Reading List</h1>
+
+    <!-- Summary counts -->
+    <section class="summary" aria-label="Summary">
+      <div><strong id="count-total">0</strong><span>Total</span></div>
+      <div><strong id="count-to-read">0</strong><span>To read</span></div>
+      <div><strong id="count-reading">0</strong><span>Reading</span></div>
+      <div><strong id="count-finished">0</strong><span>Finished</span></div>
+    </section>
+
+    <!-- Add book form -->
+    <form id="book-form" class="form">
+      <div class="field">
+        <label for="title">Title</label>
+        <input id="title" type="text" placeholder="e.g. Atomic Habits" required>
+      </div>
+      <div class="field">
+        <label for="author">Author</label>
+        <input id="author" type="text" placeholder="e.g. James Clear" required>
+      </div>
+      <div class="field">
+        <label for="status">Status</label>
+        <select id="status">
+          <option value="to-read">To read</option>
+          <option value="reading">Reading</option>
+          <option value="finished">Finished</option>
+        </select>
+      </div>
+      <button type="submit">Add book</button>
+    </form>
+
+    <!-- Filter -->
+    <div class="filters" role="group" aria-label="Filter books">
+      <button type="button" class="filter active" data-filter="all">All</button>
+      <button type="button" class="filter" data-filter="to-read">To read</button>
+      <button type="button" class="filter" data-filter="reading">Reading</button>
+      <button type="button" class="filter" data-filter="finished">Finished</button>
+    </div>
+
+    <!-- Book list -->
+    <ul id="book-list" class="list"></ul>
+    <p id="empty-message" class="empty" hidden></p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
